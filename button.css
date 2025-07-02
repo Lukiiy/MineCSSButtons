@@ -1,0 +1,91 @@
+/* Modifies every button */
+button.java, button.bedrock, button.oreUI { all: unset; }
+
+button.java, button.bedrock, button.oreUI {
+  --size: 20pt; /* <-- Adjust width using this! */
+
+  height: 30pt;
+  width: calc(var(--size) * 10);
+  border: 2px solid #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: inherit;
+  cursor: default;
+}
+
+
+/* Java buttons */
+button.java {
+  background-color: #999;
+  box-shadow: inset -2px -4px #0006, inset 2px 2px #fff7;
+  text-shadow: 2px 2px #000c;
+  image-rendering: pixelated;
+  background-image: url(assets/java.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+button.java:active, button.java:disabled {
+  background-image: url(assets/java_pressed.webp);
+  box-shadow: none;
+  border: 2px solid #000;
+  color: #a0a0a0;
+}
+
+button.java:not(:disabled):hover { border: 2px solid #fff; }
+
+/* Java buttons (before 1.15) */
+button.java.legacy:hover, button.java.legacy:active {
+  background-image: url(assets/java_hover.webp);
+  border: 2px solid #000;
+  color: #ffffa0;
+  text-shadow: 2px 2px #202013CC;
+}
+
+
+/* Bedrock buttons */
+button.bedrock {
+  background-color: #c6c6c6;
+  box-shadow: inset -2px -2px #0006, inset 2px 2px #fff;
+  color: #4c4c4c;
+  text-shadow: none;
+}
+
+button.bedrock:hover { box-shadow: inset -2px -2px #064e07, inset 2px 2px #1fcd24; }
+
+button.bedrock:active { box-shadow: inset -2px -2px #1fcd24, inset 2px 2px #064e07; }
+
+button.bedrock:hover, button.bedrock:active {
+  border: 2px solid #000;
+  background-color: #218313;
+  color: #fff;
+}
+
+button.bedrock:disabled {
+  background-color: #757575;
+  color: #4c4c4c;
+  box-shadow: unset;
+  border: 2px solid #131313;
+}
+
+
+/* Bedrock's Ore UI buttons */
+button.oreUI {
+  --border: inset 0 -4px 0 #58585a, inset -2px -6px 0 #fff6, inset 2px 2px 0 #fff9;
+  
+  background: #d0d1d4;
+  box-shadow: var(--border);
+  color: #1e1e1f;
+  text-shadow: none;
+}
+
+button.oreUI:active, button.oreUI:disabled {
+  background-color: #b1b2b5;
+  box-shadow: inset -2px -2px 0 #fcf5f1, inset 2px 2px 0 #fff6;
+}
+
+button.oreUI:not(:disabled):not(:active):hover { box-shadow: var(--border), 0 0 0 2px #fff; }

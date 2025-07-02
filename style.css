@@ -1,0 +1,22 @@
+/* Font https://github.com/IdreesInc/Minecraft-Font */
+@font-face {
+  font-family: 'Minecraft';
+  src: url(assets/font.otf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html { color-scheme: dark; }
+
+body {
+  font-family: Minecraft, Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-shadow: 2px 2px #000c;
+  letter-spacing: -.4pt;
+}
+
+a { text-decoration: none; }
